@@ -414,4 +414,28 @@ var genesisMenuParams    = typeof genesis_responsive_menu === 'undefined' ? '' :
 
 	});
 
+	//combine menus
+	setupMenus();
+
+	$( window ).resize( function() {
+		setupMenus();
+	});
+
+	function setupMenus () {
+
+		if ( window.innerWidth <= 1023 ) {
+			$( 'ul.menu-secondary > li' ).addClass('moved-item'); //tag moved items so we can move them back
+			$( 'ul.menu-secondary > li' ).appendTo( 'ul.menu-primary' );
+			$( '.nav-secondary' ).hide();
+		}
+
+		if ( window.innerWidth >= 1023 ) {
+			$( '.nav-primary .genesis-nav-menu, nav .sub-menu' ).removeAttr( 'style' );
+			$( '.responsive-menu > .menu-item' ).removeClass( 'menu-open' );
+			$( '.nav-secondary' ).show();
+			$( 'ul.menu-primary > li.moved-item' ).appendTo( 'ul.menu-secondary' );
+		}
+
+	}
+
 })( document, jQuery );

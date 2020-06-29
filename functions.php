@@ -60,9 +60,10 @@ define( 'CHILD_THEME_VERSION', '1.2.2' );
 add_action( 'wp_enqueue_scripts', 'kreativ_scripts_styles' );
 function kreativ_scripts_styles() {
   
+ 
+  wp_enqueue_style( 'custom-css', get_stylesheet_directory_uri() . '/custom.css', array(), '1.0');
   wp_enqueue_style( 'mobile-nav', get_stylesheet_directory_uri() . '/mobile-nav.css', array(), '1.0' );
   wp_enqueue_style( 'nav-css', get_stylesheet_directory_uri() . '/nav.css', array(), '1.0' );
-  wp_enqueue_style( 'custom-css', get_stylesheet_directory_uri() . '/custom.css', array(), '1.0');
 	wp_enqueue_style( 'kreativ-font-lato', '//fonts.googleapis.com/css?family=Lato:300,400,700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'kreativ-font-ss', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'kreativ-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.7.0' );
@@ -145,12 +146,12 @@ function kreativ_scripts_styles() {
 function kreativ_responsive_menu_settings() {
 
 	$settings = array(
-		'mainMenu'    => __( 'Menu', 'kreativ-pro' ),
+		'mainMenu'    => __( 'Menu' ),
 		'subMenu'     => __( 'Menu', 'kreativ-pro' ),
 		'menuClasses' => array(
 			'others' => array(
 				'.nav-primary',
-				'.nav-secondary',
+				'.nav-secondary'
 			),
 		),
 	);
@@ -166,9 +167,7 @@ function kreativ_rtl_styles() {
 	if ( ! is_rtl() ) {
 		return;
 	}
-
 	wp_enqueue_style( 'kreativ-rtl', get_stylesheet_directory_uri() . '/rtl/style-rtl.css', array(), CHILD_THEME_VERSION );
-
 }
 
 // Add HTML5 markup structure.
@@ -327,48 +326,6 @@ genesis_register_sidebar( array(
   'description'	=> __( 'Adds testimonial.', 'west_oakland_health' ),
 ) );
 
-/*genesis_register_sidebar( array(
-	'id'          => 'front-page-1',
-	'name'        => __( 'Front Page 1', 'kreativ-pro' ),
-	'description' => __( 'This is the front page 1 section.', 'kreativ-pro' ),
-) );
-
-genesis_register_sidebar( array(
-	'id'          => 'front-page-2',
-	'name'        => __( 'Front Page 2', 'kreativ-pro' ),
-	'description' => __( 'This is the front page 2 section.', 'kreativ-pro' ),
-) );
-
-genesis_register_sidebar( array(
-	'id'          => 'front-page-3',
-	'name'        => __( 'Front Page 3', 'kreativ-pro' ),
-	'description' => __( 'This is the front page 3 section.', 'kreativ-pro' ),
-) );
-
-genesis_register_sidebar( array(
-	'id'          => 'front-page-4',
-	'name'        => __( 'Front Page 4', 'kreativ-pro' ),
-	'description' => __( 'This is the front page 4 section.', 'kreativ-pro' ),
-) );
-
-genesis_register_sidebar( array(
-	'id'          => 'front-page-5',
-	'name'        => __( 'Front Page 5', 'kreativ-pro' ),
-	'description' => __( 'This is the front page 5 section.', 'kreativ-pro' ),
-) );
-
-genesis_register_sidebar( array(
-	'id'          => 'front-page-6',
-	'name'        => __( 'Front Page 6', 'kreativ-pro' ),
-	'description' => __( 'This is the front page 6 section.', 'kreativ-pro' ),
-) );
-
-genesis_register_sidebar( array(
-	'id'          => 'front-page-7',
-	'name'        => __( 'Front Page 7', 'kreativ-pro' ),
-	'description' => __( 'This is the front page 7 section.', 'kreativ-pro' ),
-) );*/
-
 // Notice Bar
 if ( is_active_sidebar( 'notice-bar') ) {
   add_action('genesis_before_header', 'notice_bar_fp');
@@ -381,7 +338,6 @@ if ( is_active_sidebar( 'notice-bar') ) {
 } else {
   return '';
 }
-
 
 // Topbar with contact info and social links.
 add_action( 'genesis_before_header', 'kreativ_topbar' );
@@ -464,8 +420,6 @@ function mytheme_setup() {
   add_theme_support( 'responsive-embeds' );
 }
 add_action( 'after_setup_theme', 'mytheme_setup' );
-
-
 
 // Remove Genesis SEO settings from post/page editor
 remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );

@@ -3,7 +3,7 @@ Custom Nav CSS
 Move to custom.css whrn project is done.
  */
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
     .fas {
         font-weight: inherit;
         vertical-align: middle;
