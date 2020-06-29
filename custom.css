@@ -1,0 +1,386 @@
+/**
+Custom CSS
+    - Buttons
+    - Carousel
+    - Custom Margins, Padding
+    - Fonts
+    - Footer
+    - Fontawesome
+    - Front Page
+        - Grid
+        - New Site Header
+        - Testimonials
+        - Topbar
+        - Message
+        - Note Hours
+    - Menu
+    - Notice Bar
+    - Pages
+    - Preloader
+    - Media Queries
+ */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+/**
+========================== */
+button,
+input[type="submit"] {
+    font-weight: 900;
+    background-color: #CF2E2D;
+}
+button:hover {
+    background-color: #ee5664;
+}
+.widget_search input[type="submit"] {
+    font-weight: 900;
+}
+.enews-widget input[type="submit"] {
+    font-weight: 900;
+}
+.btn.btn-wohc {
+    background-color: #005A86;
+    padding: 0.8em 1.5em;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 1.618em 0 2.618em;
+}
+/** Carousel
+=========================== */
+.carousel-indicators li {
+    height: 12px !important;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 40px !important;
+    height: 40px !important;
+}
+/** Custom Margins, Padding
+=========================== */
+.mb-1618 {
+    margin-bottom: 1.618em;
+}
+.mt-1618 {
+    margin-top: 1.618em;
+}
+.pb-1618 {
+    padding-bottom: 1.618em;
+}
+.pt-1618 {
+    padding-top: 1.618em;
+}
+/** Fonts
+=========================== */
+#menu-item-457 {
+    font-weight: 700;
+    color: #f5f5f5;
+}
+#menu-item-457 a {
+    color: #f5f5f5;
+}
+/** Footer
+=========================== */
+.testimonial-p {
+    color: #005B86;
+}
+.light-patient {
+    font-weight: 200;
+}
+.content-sidebar-wrap.above-footer {
+    background-color: #191919;
+}
+.wcag img {
+    margin: 0 auto;
+    padding-top: 1.618em;
+}
+#genesis-footer-widgets a {
+    color: #ffffff;
+    text-decoration: none;
+}
+/** Fontawesome
+=========================== */
+.fas {
+    font-family: "FontAwesome";
+}
+.fontawesome {
+    width: 100%;
+    text-align: center;
+}
+.fontawesome .fas {
+    display: block;
+    margin: 0 auto;
+    color: #005B86;
+}
+.fas:before {
+    margin: 0 auto;
+}
+/** Front Page
+=========================== */
+.container-plus {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+/* Masthead */
+
+#masthead-front-page {
+    margin-bottom: 5.1618em;
+}
+.masthead-content {
+    margin: 0.5em auto;
+}
+.masthead-content .wrap .widget_text .textwidget .container > p,
+.masthead-content .wrap .widget_text .textwidget > h3
+{
+    text-align: center;
+}
+.masthead-content .wrap .widget_text .textwidget > h3 {
+    margin-bottom: 20px;
+}
+/* Grid */
+#front-page-grid {
+    margin-top: 10.1618em;
+}
+.grid-content img {
+    margin: 0 auto;
+    display: block;
+}
+.grid-content .widget_custom_html h3 {
+    text-align: center;
+    color: #EE5763;
+    font-weight: 800;
+    margin-bottom: 1.618em;
+    font-size: 2.8rem;
+}
+/* New Site Header */
+header.site-header,
+header.site-header nav.nav-primary {
+   background-color: #005B87;
+}
+#custom_html-15 h3 {
+    font-size: 4rem;
+}
+#front-page-3 .solid-section .wrap section#featured-page-6 .widget-wrap article,
+#front-page-3 .solid-section .wrap section#featured-page-7 .widget-wrap article,
+#front-page-3 .solid-section .wrap section#featured-page-8 .widget-wrap article,
+#front-page-3 .solid-section .wrap section#featured-page-9 .widget-wrap article,
+#front-page-3 .solid-section .wrap section#featured-page-10 .widget-wrap article,
+#front-page-3 .solid-section .wrap section#featured-page-11 .widget-wrap article {
+    margin: 4px;
+}
+#front-page-3 {
+    padding: 50px 0;
+}
+#front-page-3 h3 {
+    margin: 0 0 0 0;
+}
+#custom_html-16 {
+    margin-bottom: 45px;
+}
+/* Testimonials */
+#testimonials {
+    margin-bottom: 1.618em;
+}
+#testimonial-title .wrap .widget_custom_html .widget_text.widget-wrap .custom-html-widget h4 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding-top: 1.618em;
+    padding-bottom: 1.618em;
+}
+#testimonial-row .col-md-4 .wrap {
+    width: 80%;
+}
+
+/* Topbar */
+#topbar {
+    margin-top: 5.618em;
+    margin-bottom: 3.618em;
+}
+#topbar h2 {
+    font-size: 3.8rem;
+    text-align: center;
+    margin: 0;
+}
+/* Message */
+#message {
+    margin-top: 1.50em;
+    margin-bottom: 6em;
+}
+#message span.large {
+    font-size: 1.5em;
+}
+#message h3 {
+    color: #000000;
+    font-size: 2em;
+    font-weight: 900;
+}
+#message h3 {
+    margin-bottom: 1em;
+    margin-top: 1.618em;
+}
+#message-wrapper {
+    background-color: #CCDEE8;
+    margin-left: -35px;
+    margin-bottom: -35px;
+    margin-top: 35px;
+}
+.message-content .wrap {
+    width: 80%;
+}
+/** Note Hours
+=========================== */
+#note-section {
+    margin-top: 10.1618em;
+    margin-bottom: 5.1618em;
+}
+.note-and-hours.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+.note-content .wrap{
+    width: 80%;
+}
+.hours-content .wrap {
+    width: 40%;
+}
+#hours-wrapper {
+    z-index: -1;
+}
+#note-community {
+    background-color: #EE5763;
+    margin-right: -52px;
+    margin-top: -32px;
+}
+#note-community h4,
+#hours h4 {
+    font-size: 3.3rem;
+}
+#note-community h4 {
+    margin-bottom: 1em;
+    margin-top: 1.618em;
+}
+.widget-content.hours-content {
+    background-color: #f5f5f5;
+    margin-top: 42px;
+}
+#hours .wrap .widget_custom_html .widget-wrap .custom-html-widget h4 {
+    color: #EE5763;
+    font-weight: 800;
+    margin-top: 1.618em;
+    margin-bottom: 1.1618em;
+}
+#hours .wrap .widget_custom_html .widget-wrap .custom-html-widget {
+    text-align: center;
+}
+#hours .wrap .widget_custom_html .widget-wrap .custom-html-widget p {
+    margin-bottom: 1.618em;
+}
+#hours .wrap .widget_custom_html .widget-wrap .custom-html-widget .lead {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 2.618em;
+}
+#hours .wrap .widget_custom_html .widget-wrap .custom-html-widget .lead a {
+    line-height: 2.2;
+}
+#note-community .wrap .widget_custom_html .widget-wrap .custom-html-widget h4,
+#note-community .wrap .widget_custom_html .widget-wrap .custom-html-widget p {
+    color: #ffffff;
+}
+/** Menu
+    =========================== */
+.genesis-nav-menu {
+    display: flex;
+    justify-content: center;
+}
+/** Notice Bar
+=========================== */
+.notice-bar h1 {
+    font-size: 4.5rem;
+}
+.notice-bar h2 {
+    font-size: 3.5rem;
+}
+.notice-bar h3 {
+    font-size: 3rem;
+}
+.notice-bar h4 {
+    font-size: 2.5rem;
+}
+.notice-bar h5 {
+    font-size: 2.0rem;
+}
+.notice-bar.top-notice-bar .wrap {
+    padding: 2.618rem 0;
+}
+#noticecontent img {
+    float: left;
+    max-width: 500px !important;
+    margin: 0 2em;
+}
+.expandable {
+    display:none;
+}
+/** Pages
+============================== */
+.pagination {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.wp-block-search.aligncenter {
+    margin: 1.618em auto;
+    display: block;
+    text-align: center;
+}
+h1.site-title {
+    display: none !important;
+}
+.entry-title {
+    display: none;
+}
+.wp-block-search.aligncenter label {
+    padding-right: 1em;
+}
+
+/** Media Queries
+================================ */
+
+@media only screen and (max-width: 860px) {
+    #noticecontent {
+        display: inherit;
+        justify-content: center;
+        align-items: center;
+    }
+    #noticecontent img {
+        float: none;
+        max-width: 500px !important;
+        margin: 0 auto 1em auto;
+        display: block;
+    }
+    .notice-bar.top-notice-bar .wrap {
+        width: 80%;
+        margin: 0 auto;
+        text-align: justify;
+    }
+    #front-page-3 .solid-section .wrap section#featured-page-6 .widget-wrap article,
+    #front-page-3 .solid-section .wrap section#featured-page-7 .widget-wrap article,
+    #front-page-3 .solid-section .wrap section#featured-page-8 .widget-wrap article,
+    #front-page-3 .solid-section .wrap section#featured-page-9 .widget-wrap article,
+    #front-page-3 .solid-section .wrap section#featured-page-10 .widget-wrap article,
+    #front-page-3 .solid-section .wrap section#featured-page-11 .widget-wrap article {
+        margin: 10px 0;
+    }
+}
+
+
+@media (max-width: 575.98px) {  }
+
+@media (max-width: 767.98px) {
+    #hero-video,
+    #carouselExampleControls {
+        display: none;
+    }
+}
+
+@media (max-width: 991.98px) {  }
+
+@media (max-width: 1199.98px) {  }

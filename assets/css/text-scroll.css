@@ -1,0 +1,83 @@
+/* Scrolling Text
+------------------------------ */
+@media screen and ( min-width: 1024px ) {
+    #noticecontent .widgettitle.widget-title {
+        display: none;
+    }
+    .notice-bar .wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    #noticecontent .textwidget {
+        height: 50px;
+        overflow: hidden;
+        /*width: 150%;
+        max-width: 150%;*/
+        position: relative;
+    }
+
+    #noticecontent .textwidget p {
+        font-size: 3rem;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        line-height: 50px;
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        /* Apply animation to this element */
+        -moz-animation: textwidget 15s linear infinite;
+        -webkit-animation: textwidget 15s linear infinite;
+        animation: textwidget 15s linear infinite;
+    }
+
+    #noticecontent .widget-wrap img {
+       display: none;
+    }
+
+    .notice-bar.top-notice-bar .wrap {
+        padding: 0.518rem 0 !important;
+    }
+
+
+    /* Move it (define the animation) */
+    @-moz-keyframes textwidget {
+        0% {
+            -moz-transform: translateX(100%);
+        }
+        100% {
+            -moz-transform: translateX(-100%);
+        }
+    }
+    @-webkit-keyframes textwidget {
+        0% {
+            -webkit-transform: translateX(100%);
+        }
+        100% {
+            -webkit-transform: translateX(-100%);
+        }
+    }
+    @keyframes textwidget {
+        0% {
+            -moz-transform: translateX(100%); /* Firefox bug fix */
+            -webkit-transform: translateX(100%); /* Firefox bug fix */
+            transform: translateX(100%);
+        }
+        100% {
+            -moz-transform: translateX(-100%); /* Firefox bug fix */
+            -webkit-transform: translateX(-100%); /* Firefox bug fix */
+            transform: translateX(-100%);
+        }
+    }
+}
+
+@media screen and (max-width: 860px ) {
+    #noticecontent p {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    #noticecontent .widgettitle.widget-title {
+        display: none;
+    }
+}
