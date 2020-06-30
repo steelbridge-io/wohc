@@ -80,6 +80,21 @@ button:hover {
 }
 /** Footer
 =========================== */
+.footer-heart.fas.fa-heart {
+    color: red;
+}
+#genesis-footer-widgets .wrap .footer-widgets-1 .widget_text .widget-wrap,
+#genesis-footer-widgets .wrap .footer-widgets-2 .widget_text .widget-wrap,
+#genesis-footer-widgets .wrap .footer-widgets-3 .widget_text .widget-wrap,
+.footer-widgets .enews {
+   text-align: center;
+}
+.footer-widgets .wrap {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .testimonial-p {
     color: #005B86;
 }

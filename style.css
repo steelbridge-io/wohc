@@ -1871,7 +1871,7 @@ img.alignright,
 	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 	border-radius: 2px;
 	margin-bottom: 30px;
-	padding: 0;
+	padding: 1.618em;
 }
 
 .entry > p {
@@ -2403,10 +2403,6 @@ p.entry-meta {
 
 /*! Footer widgets
 --------------------------------------------- */
-
-.footer-widgets .enews {
-	max-width: 300px;
-}
 
 .footer-widgets .enews form {
 	position: relative;

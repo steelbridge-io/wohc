@@ -402,9 +402,6 @@ function kreativ_scrollup() {
 	echo '</div>';
 }
 
-//* Remove the entry title
-//remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
-
 //* Remove the entry meta in the entry header
 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 
@@ -413,7 +410,6 @@ add_action( 'wp_enqueue_scripts', 'sp_enqueue_ionicons' );
 function sp_enqueue_ionicons() {
     wp_enqueue_style( 'ionicons', '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
 }
-
 
 function mytheme_setup() {
   add_theme_support( 'align-wide' );
@@ -447,3 +443,14 @@ function add_wc_WCAG2A() {
 </a>';
   echo '</div></div>';
 }
+
+
+
+remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_headline', 10, 3 );
+add_action( 'genesis_archive_title_descriptions', 'filter_cpt_archive_title', 10, 3 );
+function filter_cpt_archive_title( $heading = '', $intro_text = '', $context = '' ) {
+  if ( $context && $heading ) {
+    printf( '<h1 %s>%s</h1>', genesis_attr( 'archive-title' ), strip_tags( $heading ) );
+  }
+}
+
