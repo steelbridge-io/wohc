@@ -178,6 +178,7 @@ button:hover {
 .grid-content img {
     margin: 0 auto;
     display: block;
+    width: 100%;
 }
 .grid-content .widget_custom_html h3 {
     text-align: center;
@@ -426,6 +427,13 @@ h1.site-title {
 }
 .wp-block-search.aligncenter label {
     padding-right: 1em;
+}
+.page .entry-header h1.entry-title {
+    text-align: center;
+    color: #EF5564;
+}
+.has-5-columns.location-list.locations {
+    padding: 1.618em;
 }
 /** Site Wide Customizations
 ================================ */
