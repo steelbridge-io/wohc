@@ -1,5 +1,6 @@
 /**
 Custom CSS
+    - Blog
     - Buttons
     - Carousel
     - Custom Margins, Padding
@@ -17,10 +18,16 @@ Custom CSS
     - Notice Bar
     - Pages
     - Preloader
+    - Site Wide Customizations
     - Media Queries
  */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
-/**
+/** Blog
+========================== */
+.blog .site-container .expandable {
+    display: none !important;
+}
+/** Buttons
 ========================== */
 button,
 input[type="submit"] {
@@ -80,6 +87,9 @@ button:hover {
 }
 /** Footer
 =========================== */
+.site-footer .wrap p {
+    font-size: 1.4rem;
+}
 .footer-heart.fas.fa-heart {
     color: red;
 }
@@ -87,7 +97,13 @@ button:hover {
 #genesis-footer-widgets .wrap .footer-widgets-2 .widget_text .widget-wrap,
 #genesis-footer-widgets .wrap .footer-widgets-3 .widget_text .widget-wrap,
 .footer-widgets .enews {
-   text-align: center;
+   text-align: justify;
+}
+.widget-area.footer-widgets-1.footer-widget-area section,
+.widget-area.footer-widgets-2.footer-widget-area section,
+.widget-area.footer-widgets-3.footer-widget-area section {
+    width: 69%;
+    margin: 1.618em auto 0 auto;
 }
 .footer-widgets .wrap {
     max-width: 100%;
@@ -139,6 +155,7 @@ button:hover {
 
 #masthead-front-page {
     margin-bottom: 5.1618em;
+    margin-top: 5.618em;
 }
 .masthead-content {
     margin: 0.5em auto;
@@ -152,8 +169,11 @@ button:hover {
     margin-bottom: 20px;
 }
 /* Grid */
+.grid-content .widget_custom_html a:hover {
+    text-decoration: none;
+}
 #front-page-grid {
-    margin-top: 10.1618em;
+    margin-top: 5.1618em;
 }
 .grid-content img {
     margin: 0 auto;
@@ -170,6 +190,7 @@ button:hover {
 header.site-header,
 header.site-header nav.nav-primary {
    background-color: #005B87;
+    padding: 10px 0;
 }
 #custom_html-15 h3 {
     font-size: 4rem;
@@ -192,8 +213,15 @@ header.site-header nav.nav-primary {
     margin-bottom: 45px;
 }
 /* Testimonials */
+.testimonial-p img {
+    float: left;
+    max-height: 75px;
+    max-width: 75px;
+    margin: 0px 20px 0 0;
+    border-radius: 50%;
+}
 #testimonials {
-    margin-bottom: 1.618em;
+    margin-bottom: 5.618em;
 }
 #testimonial-title .wrap .widget_custom_html .widget_text.widget-wrap .custom-html-widget h4 {
     font-size: 2.5rem;
@@ -201,7 +229,7 @@ header.site-header nav.nav-primary {
     padding-top: 1.618em;
     padding-bottom: 1.618em;
 }
-#testimonial-row .col-md-4 .wrap {
+#testimonial-row .col-lg-4 .wrap {
     width: 80%;
 }
 
@@ -241,10 +269,45 @@ header.site-header nav.nav-primary {
 .message-content .wrap {
     width: 80%;
 }
-/** Note Hours
-=========================== */
+.message-content.widget-content {
+    padding: 0 0 2.4em 0;
+}
+.message-content .wrap .widget_text.widget_custom_html .widget_text.widget-wrap .textwidget.custom-html-widget button:hover {
+    color: #f5f5f5 !important;
+}
+.message-content .wrap .widget_text.widget_custom_html .widget_text.widget-wrap .textwidget.custom-html-widget a:hover {
+    text-decoration: none;
+}
+/* Medical Message */
+.medical-message-content.message-content .wrap {
+    padding: 0 0 2.4em 0;
+}
+#medical-message-wrapper {
+    background-color: #CCDEE8;
+    margin-left: -35px;
+    margin-right: -35px;
+    margin-bottom: -35px;
+    margin-top: 35px;
+}
+#medical-message h3 {
+    margin-top: 1.618em;
+    margin-bottom: 1em;
+ }
+#medical-message h3 {
+    color: #000000;
+    font-size: 2em;
+    font-weight: 900;
+}
+#medical-message span.large {
+    font-size: 1.5em;
+}
+.medical-message-content.widget-content {
+    padding: 0 0 2.4em 0;
+}
+     /** Note Hours
+     =========================== */
 #note-section {
-    margin-top: 10.1618em;
+    margin-top: 5.1618em;
     margin-bottom: 5.1618em;
 }
 .note-and-hours.container-fluid {
@@ -264,6 +327,14 @@ header.site-header nav.nav-primary {
     background-color: #EE5763;
     margin-right: -52px;
     margin-top: -32px;
+}
+#note-community a {
+    color: #ffffff;
+}
+#note-community a:hover,
+#note-community button:hover {
+    color: #f5f5f5;
+    text-decoration: none;
 }
 #note-community h4,
 #hours h4 {
@@ -303,6 +374,10 @@ header.site-header nav.nav-primary {
 }
 /** Menu
     =========================== */
+.large-text {
+    font-size: 1.7rem !important;
+    font-weight: 900;
+}
 .genesis-nav-menu {
     display: flex;
     justify-content: center;
@@ -349,17 +424,185 @@ header.site-header nav.nav-primary {
 h1.site-title {
     display: none !important;
 }
-.entry-title {
-    display: none;
-}
 .wp-block-search.aligncenter label {
     padding-right: 1em;
+}
+/** Site Wide Customizations
+================================ */
+/*Site-Wide Customizations*/
+p {
+    font-size: 19px;
+}
+
+h2, h3, h4 {
+    color: #005B86;
+    margin-top: 20px;
+}
+
+h5 {
+    color: #005B86;
+
+}
+
+.wp-block-atomic-blocks-ab-columns {
+    padding-top: 5%;
+    padding-bottom: 5%
+}
+/*Home Page Customizations*/
+.site-topbar {
+    background: #005B86;
+    height:50px;
+}
+.beforeheader {
+    color:white;
+    margin-top:10px;
+}
+.front-page-1 .widget:nth-of-type(1) {
+    max-width: 800px;
+}
+
+.image-section > .overlay {
+    background-color: #ee5664;
+}
+
+
+.footer-widgets {
+    background-color: #005B86;
+    color: #fff;
+}
+.home {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+#testimonial-avatar {
+    color: blue;
+}
+
+.genesis-nav-menu .button-red a {
+    background-color: #ee5664;
+    border: 1px solid #ee5664;
+    border-radius: 0px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.genesis-nav-menu .button-red a:hover {
+    background-color: #ee5664;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.genesis-nav-menu .button-green a {
+    background-color: #6eb455;
+    border: 1px solid #6eb455;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.genesis-nav-menu .button-green a:hover {
+    background-color: #6eb455;
+    border: 1px solid #6eb455;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.center
+{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+/* Heart Icon
+--------------------------------------------- */
+
+.site-footer .icon {
+    font-size: 15px;
+    color: #ee3444;
+}
+
+.site-footer .love .icon {
+    font-size: 12px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+/*Pediatrics Page*/
+.column {
+    float: left;
+    width: 25%;
+    margin-bottom: 10px;
+}
+
+/*Behavioral Health Page*/
+.bullet-list {
+    font-size: 19px;
+}
+
+/*Contact Us Page*/
+.location-list {
+    background-color: #F9F2F0;
+    padding:10px;
+}
+.location-column {
+    padding-top: 10px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #ee3444;
+}
+
+/*Locations Page*/
+.locations {
+    margin: 0 0 5px;
+}
+
+/*Annual Fundraiser Post*/
+.wp-block-button__link {
+    margin: 5PX;
 }
 
 /** Media Queries
 ================================ */
+@media (max-width: 1199.98px) {  }
+
+@media (max-width: 991.98px) {
+    .widget-content.hours-content {
+        margin-top: 0;
+    }
+    #note-community {
+        margin: initial;
+    }
+    .note-content .wrap {
+        width: 90%;
+    }
+    #hours-wrapper {
+        z-index: initial;
+    }
+    .hours-content .wrap {
+        width: 90%;
+    }
+    #testimonial-row {
+        padding-left: 5.618em;
+        padding-right: 5.618em;
+    }
+    .widget-area.footer-widgets-1.footer-widget-area section,
+    .widget-area.footer-widgets-2.footer-widget-area section,
+    .widget-area.footer-widgets-3.footer-widget-area section {
+        width: 83%;
+        margin: 1.618 auto 0 auto;
+    }
+    #testimonial-row .col-lg-4 .wrap {
+        width: 100%;
+    }
+}
 
 @media only screen and (max-width: 860px) {
+    #testimonial-row {
+        padding-left: 1.618em;
+        padding-right: 1.618em;
+    }
     #noticecontent {
         display: inherit;
         justify-content: center;
@@ -386,10 +629,11 @@ h1.site-title {
     }
 }
 
-
-@media (max-width: 575.98px) {  }
-
 @media (max-width: 767.98px) {
+    .site-footer .wrap p {
+        font-size: 1.4rem;
+        padding-left: 1.618em;
+    }
     #hero-video,
     #carouselExampleControls {
         display: none;
@@ -421,12 +665,19 @@ h1.site-title {
     #hours-wrapper {
         z-index: initial;
     }
-    #testimonial-row .col-md-4 .wrap {
+    #testimonial-row .col-lg-4 .wrap {
         width: 100%;
     }
 
 }
 
-@media (max-width: 991.98px) {  }
+@media (max-width: 575.98px) {
+    .widget-area.footer-widgets-1.footer-widget-area section,
+    .widget-area.footer-widgets-2.footer-widget-area section,
+    .widget-area.footer-widgets-3.footer-widget-area section {
+        width: 69%;
+        margin: 0 auto;
+    }
+}
 
-@media (max-width: 1199.98px) {  }
+

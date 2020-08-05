@@ -164,6 +164,23 @@ function kreativ_front_page_widgets() {
   ));
   echo '</div></div></div></section>';
   
+  // Medical Message Section
+  echo '<section id="medical-message" class="front-page-medical-message"><div class="container-fluid mt-lg-5"><div class="row">';
+  echo '<div id="medical-message-wrapper" class="col-md-8">';
+  genesis_widget_area('medical-message-front-page', array(
+    'before'  => '<div class="medical-message-content medical-widget-content message-content"><div class="wrap">',
+    'after'   => '</div></div>'
+  ));
+  echo '</div>';
+  echo '<div class="col-md-3">';
+  genesis_widget_area( 'medical-message-image', array(
+    'before'  => '<div class="medical-image-content medical-widget-content"><div class="wrap">',
+    'after'   => '</div></div>'
+  ));
+  echo '</div></div></div></section>';
+  
+  
+  
   // Grid Section
   echo '<section id="front-page-grid" class="front-page-grid"><div class="container-fluid mt-lg-5"><div class="row justify-content-center">';
   
@@ -216,18 +233,18 @@ function kreativ_front_page_widgets() {
   ));
   echo  '</div>';
   
-  echo '<div class="container-fluid mt-lg-5"><div id="testimonial-row" class="row"><div class="col-md-4"><div class="wrap">';
+  echo '<div class="container-fluid mt-lg-5"><div id="testimonial-row" class="row"><div class="col-lg-4"><div class="wrap">';
   
   genesis_widget_area('testimonial-one', array(
     'before'  => '<div id="testimonial-one" class="testimonial-content widget-content"><div class="wrap">',
     'after'   => '</div></div>'
   ));
-  echo '</div></div><div class="col-md-4"><div class="wrap">';
+  echo '</div></div><div class="col-lg-4"><div class="wrap">';
   genesis_widget_area('testimonial-two', array(
     'before'  => '<div id="testimonial-two" class="testimonial-content widget-content"><div class="wrap">',
     'after'   => '</div></div>'
   ));
-  echo '</div></div><div class="col-md-4"><div class="wrap">';
+  echo '</div></div><div class="col-lg-4"><div class="wrap">';
   genesis_widget_area('testimonial-three', array(
     'before'  => '<div id="testimonial-three" class="testimonial-content widget-content"><div class="wrap">',
     'after'   => '</div></div>'

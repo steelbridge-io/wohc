@@ -1242,7 +1242,6 @@ img.alignright,
 
 .site-header {
 	background-color: #fff;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .site-header > .wrap {
@@ -1313,6 +1312,7 @@ img.alignright,
 .site-description,
 .site-title {
 	margin-bottom: 0;
+	display: none;
 }
 
 
@@ -1871,7 +1871,7 @@ img.alignright,
 	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 	border-radius: 2px;
 	margin-bottom: 30px;
-	padding: 1.618em;
+	padding: 1em;
 }
 
 .entry > p {
@@ -2223,7 +2223,7 @@ p.entry-meta {
 	font-size: 14px;
 	font-size: 1.4rem;
 	padding-top: 40px;
-	padding-bottom: 10px;
+	padding-bottom: 40px;
 }
 
 .footer-widgets {
@@ -2308,7 +2308,7 @@ p.entry-meta {
 	font-size: 14px;
 	font-size: 1.4rem;
 	line-height: 1;
-	padding: 25px 0;
+	padding: 18px 0;
 	position: relative;
 	text-align: center;
 }

@@ -71,7 +71,10 @@ function kreativ_scripts_styles() {
   wp_register_style( 'font-awesome' , get_stylesheet_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.13.1' );
 	wp_enqueue_style( 'font-awesome' );
  
-	//wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/js/custom.js', array(), 'NULL', true );
+	if( is_front_page() || is_home()) {
+    wp_enqueue_script('front-page-js', get_stylesheet_directory_uri() . '/js/front-page.js', array(), 'NULL', true);
+  }
+	wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/js/custom.js', array(), 'NULL', true );
   wp_enqueue_script( 'kreativ-match-height', get_stylesheet_directory_uri() . '/js/match-height.js', array( 'jquery' ), '0.5.2', true );
   wp_enqueue_script( 'kreativ-js', get_stylesheet_directory_uri() . '/js/kreativ.js', array( 'jquery', 'kreativ-match-height' ), CHILD_THEME_VERSION, true );
   // Responsive Nav Menu.
@@ -82,15 +85,16 @@ function kreativ_scripts_styles() {
     kreativ_responsive_menu_settings()
   );
 	
-	if(is_front_page() ) {
-	  
-    if ( is_active_sidebar( 'notice-bar' ) ) {
+	if( is_front_page() || is_home() ) {
+    
+    if (is_active_sidebar('notice-bar')) {
       $scroll_check = 1;
       $scroll_text = get_theme_mod('notice_bar_scroll_check', $scroll_check);
       if ($scroll_text == 1) {
         wp_enqueue_style('text-scroll-notice', get_stylesheet_directory_uri() . '/assets/css/text-scroll.css', array(), '1.0');
       }
     }
+  }
     
     // Add bootstrap CSS
     wp_register_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', false, NULL, 'all');
@@ -140,7 +144,6 @@ function kreativ_scripts_styles() {
     }
     add_filter('script_loader_tag', 'add_popper_script_attributes', 10, 2);
   }
-}
 
 // Define our responsive menu settings.
 function kreativ_responsive_menu_settings() {
@@ -266,6 +269,16 @@ genesis_register_sidebar( array(
   'description'	=> __( 'Adds a message to the right of the message image.', 'west_oakland_health' ),
 ) );
 genesis_register_sidebar( array(
+  'id'  => 'medical-message-front-page',
+  'name'  =>  __( 'Medical Message', 'west_oakland_health' ),
+  'description' => __( 'Adds a message to the left of the medical image', 'west_oakland_health' ),
+));
+genesis_register_sidebar( array (
+  'id'  => 'medical-message-image',
+  'name'  => __( 'Medical Message Image' ),
+  'description' => __( 'Adds an image to the right of the medical message' ),
+));
+genesis_register_sidebar( array(
   'id'		=> 'front-page-grid-one',
   'name'		=> __( 'Front Page Grid: Item One', 'west_oakland_health' ),
   'description'	=> __( 'Adds content to grid item one on the front page.', 'west_oakland_health' ),
@@ -340,12 +353,17 @@ if ( is_active_sidebar( 'notice-bar') ) {
 }
 
 // Topbar with contact info and social links.
-add_action( 'genesis_before_header', 'kreativ_topbar' );
-function kreativ_topbar() {
-	genesis_widget_area( 'topbar', array(
-		'before' => '<div class="site-topbar"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
+if(is_front_page()) {
+  add_action('genesis_before_header', 'kreativ_topbar');
+}
+if(is_front_page()) {
+  function kreativ_topbar()
+  {
+    genesis_widget_area('topbar', array(
+      'before' => '<div class="site-topbar top-bar-notice"><div class="wrap">',
+      'after' => '</div></div>',
+    ));
+  }
 }
 
 // Sticky Header.

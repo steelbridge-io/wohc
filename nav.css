@@ -3,6 +3,10 @@ Custom Nav CSS
 Move to custom.css whrn project is done.
  */
 
+.wp-custom-logo .title-area {
+    padding: 0;
+}
+
 @media (min-width: 1024px) {
     .fas {
         font-weight: inherit;
@@ -121,7 +125,7 @@ Move to custom.css whrn project is done.
     }
 
     .genesis-nav-menu a:hover {
-        color: #ff6c3a;
+        text-decoration: none;
     }
 
     .genesis-nav-menu .current-menu-item > a,
