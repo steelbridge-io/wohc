@@ -15,8 +15,9 @@ Custom CSS
         - Message
         - Note Hours
     - Menu
+    - News
     - Notice Bar
-    - Pages
+    - Pages / Posts
     - Preloader
     - Site Wide Customizations
     - Media Queries
@@ -383,6 +384,40 @@ header.site-header nav.nav-primary {
     display: flex;
     justify-content: center;
 }
+/** News
+=========================== */
+section #news-section {
+    margin: 1.618em 0 5em 0;
+}
+.news-wrap .news-cont img {
+    max-width: 200px;
+    max-height: 200px;
+    padding: 0.5em;
+}
+.news-title h3 {
+    font-size: 3rem;
+}
+.news-title .news-title-link {
+    text-decoration: none;
+}
+.news-h2 {
+    font-size: 5rem;
+    text-align: center;
+    color: #ee5664;
+}
+.news-card.card {
+    padding: 1.618em;
+    background-color: #f5f5f5;
+}
+a.read-more {
+    color: #ee5664;
+    text-decoration: none;
+}
+a:hover.read-more {
+    text-decoration: none;
+    color: #CF2E2D;
+}
+
 /** Notice Bar
 =========================== */
 .notice-bar h1 {
@@ -411,7 +446,7 @@ header.site-header nav.nav-primary {
 .expandable {
     display:none;
 }
-/** Pages
+/** Pages / Posts
 ============================== */
 .pagination {
     font-size: 2.5rem;
@@ -428,12 +463,16 @@ h1.site-title {
 .wp-block-search.aligncenter label {
     padding-right: 1em;
 }
-.page .entry-header h1.entry-title {
+.page .entry-header h1.entry-title,
+.post .entry-header h1.entry-title {
     text-align: center;
     color: #EF5564;
 }
 .has-5-columns.location-list.locations {
     padding: 1.618em;
+}
+.friends-list .wp-block-column ul li {
+    font-size: 26px;
 }
 /** Site Wide Customizations
 ================================ */
@@ -500,7 +539,8 @@ h5 {
     text-decoration: none;
 }
 
-.genesis-nav-menu .button-green a {
+.genesis-nav-menu .button-green a,
+#menu-item-2518.button-green a {
     background-color: #6eb455;
     border: 1px solid #6eb455;
     text-transform: uppercase;
@@ -573,6 +613,12 @@ h5 {
 
 /** Media Queries
 ================================ */
+@media (min-width: 1024px) {
+    .friends-list {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
 @media (max-width: 1199.98px) {  }
 
 @media (max-width: 991.98px) {

@@ -319,6 +319,11 @@ genesis_register_sidebar( array(
   'description'	=> __( 'Adds hours next to note section.', 'west_oakland_health' ),
 ) );
 genesis_register_sidebar( array(
+  'id'          => 'recentnews',
+  'name'        => __( 'Recent News', 'kreativ-pro' ),
+  'description' => __( 'News Section.', 'kreativ-pro' ),
+) );
+genesis_register_sidebar( array(
   'id'		=> 'testimonial-title',
   'name'		=> __( 'Testimonial Title', 'west_oakland_health' ),
   'description'	=> __( 'Adds testimonial title.', 'west_oakland_health' ),
@@ -436,13 +441,13 @@ function mytheme_setup() {
 add_action( 'after_setup_theme', 'mytheme_setup' );
 
 // Remove Genesis SEO settings from post/page editor
-remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
+//remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
 
 // Remove Genesis SEO settings option page
-remove_theme_support( 'genesis-seo-settings-menu' );
+//remove_theme_support( 'genesis-seo-settings-menu' );
 
 // Remove Genesis SEO settings from taxonomy editor
-remove_action( 'admin_init', 'genesis_add_taxonomy_seo_options' );
+//remove_action( 'admin_init', 'genesis_add_taxonomy_seo_options' );
 
 
 add_action( 'genesis_before_header', 'genesis_seo_site_title', 15 );
@@ -462,8 +467,6 @@ function add_wc_WCAG2A() {
   echo '</div></div>';
 }
 
-
-
 remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_headline', 10, 3 );
 add_action( 'genesis_archive_title_descriptions', 'filter_cpt_archive_title', 10, 3 );
 function filter_cpt_archive_title( $heading = '', $intro_text = '', $context = '' ) {
@@ -472,3 +475,15 @@ function filter_cpt_archive_title( $heading = '', $intro_text = '', $context = '
   }
 }
 
+// Read more
+function wpdocs_excerpt_more( $more ) {
+  if ( ! is_single() ) {
+    $more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+      get_permalink( get_the_ID() ),
+      __( '&nbsp;...Read More', 'textdomain' )
+    );
+  }
+  
+  return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );

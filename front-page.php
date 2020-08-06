@@ -223,7 +223,57 @@ function kreativ_front_page_widgets() {
     'after'   => '</div></div>'
   ));
   echo '</div></div></div></section>';
+  
+  echo '<section>';
+  genesis_widget_area( 'recentnews', array(
+    'before'  =>  '<div id="recentnews" class="container"><div class="wrap">',
+    'after'   =>  '</div></div>'
+  ));
+  echo '</section>';
+  
+  
+  echo '<section>' .
+        '<div id="news-section" class="container-fluid">' .
+          '<div class="row">';
+  
+          $args=array(
+            'posts_per_page' => '4',
+            'cat' => '11',
+          );
+          $wp_query = new WP_Query( $args );
+      
+        while ($wp_query->have_posts()) : $wp_query->the_post();
+        ?>
 
+        <div class="mt-1618 col-md-6">
+          <div class="news-card card">
+          <div class="news-title">
+            <a class="news-title-link" href="<?php the_permalink() ?>"><h3><?php the_title(); ?></h3></a>
+          </div>
+            <div class="card-content">
+            <?php
+            echo '<div class="news-wrap">' .
+                    '<div class="news-cont">';
+            $featured_img_url = get_the_post_thumbnail_url($post->ID, 'full');
+            echo '<img class="rounded float-left" src="' . $featured_img_url . '" alt="">';
+            echo    '</div>' .
+                    '<div class="news-cont">';
+                      the_excerpt(__('(more...)'));
+            echo  '</div>' .
+                '</div>';
+              ?>
+            </div>
+          </div>
+        </div>
+
+      <?php
+      // Repeat the process and reset once it hits the limit
+      endwhile;
+      wp_reset_postdata();
+      
+echo '</div>' .
+  '</div>' .
+'</section>';
 
 // Patient Testimonials
   echo '<section id="testimonials" class="front-page-testimonials"><div class="container">';
